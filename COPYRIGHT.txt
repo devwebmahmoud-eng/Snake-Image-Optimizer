@@ -1,0 +1,5 @@
+# Copyright
+
+© 2026 Mahmoud Hamed.
+
+This package is distributed under GPLv2 as described in the plugin headers and readme.
