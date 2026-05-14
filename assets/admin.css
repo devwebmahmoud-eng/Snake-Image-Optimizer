@@ -1,0 +1,343 @@
+
+/* SNIO Admin UI — neutral WordPress-style interface */
+
+.snio-app{
+  --snio-bg:#f0f0f1;
+  --snio-surface:#ffffff;
+  --snio-surface-2:#f6f7f7;
+  --snio-border:#dcdcde;
+  --snio-text:#1d2327;
+  --snio-muted:#646970;
+  --snio-primary:#2271b1;
+  --snio-primary-hover:#135e96;
+  --snio-success:#00a32a;
+  --snio-danger:#d63638;
+  --snio-shadow:0 1px 1px rgba(0,0,0,.04), 0 2px 8px rgba(0,0,0,.03);
+  background:transparent;
+  color:var(--snio-text);
+  padding-bottom:18px;
+}
+.snio-app::before,
+.snio-app::after,
+.snio-pagehead::before,
+.snio-pagehead::after{display:none !important}
+
+.snio-app .button,
+.snio-app .button-secondary{
+  border-radius:6px;
+  box-shadow:none;
+}
+
+.snio-topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin-top:14px;
+  padding:16px 18px;
+  border:1px solid var(--snio-border);
+  border-radius:14px;
+  background:var(--snio-surface);
+  box-shadow:var(--snio-shadow);
+}
+.snio-topbar__brand{display:flex;align-items:center;gap:12px;min-width:0}
+.snio-topbar__actions{display:flex;gap:10px;flex-wrap:wrap}
+.snio-logoMark{
+  width:42px;
+  height:42px;
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  color:#2271b1;
+  background:#f6f7f7;
+  border:1px solid var(--snio-border);
+}
+.snio-logoMark .dashicons{font-size:22px;width:22px;height:22px}
+.snio-brandstack{display:grid;gap:2px;min-width:0}
+.snio-logo{font-size:22px;font-weight:700;line-height:1.2;color:var(--snio-text)}
+.snio-brandsub{font-size:12px;color:var(--snio-muted)}
+.snio-plan{
+  display:inline-flex;
+  align-items:center;
+  padding:3px 10px;
+  border-radius:999px;
+  border:1px solid #c3c4c7;
+  background:#f6f7f7;
+  color:var(--snio-text);
+  font-size:12px;
+}
+
+.snio-shell{display:grid;grid-template-columns:260px minmax(0,1fr);gap:16px;margin-top:16px}
+.snio-main{min-width:0}
+@media (max-width: 980px){.snio-shell{grid-template-columns:1fr}}
+
+.snio-nav{
+  position:sticky;
+  top:48px;
+  align-self:start;
+  padding:10px;
+  border:1px solid var(--snio-border);
+  border-radius:14px;
+  background:var(--snio-surface);
+  box-shadow:var(--snio-shadow);
+}
+@media (max-width: 980px){.snio-nav{position:relative;top:auto}}
+.snio-nav ul{margin:0;padding:0;list-style:none}
+.snio-nav__link{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:3px;
+  padding:10px 12px;
+  border:1px solid transparent;
+  border-radius:8px;
+  color:var(--snio-text);
+  text-decoration:none;
+}
+.snio-nav__link:hover{background:#f6f7f7;border-color:var(--snio-border);color:#135e96}
+.snio-nav__link.is-active{background:#f6f7f7;border-color:#c3c4c7;color:var(--snio-text);font-weight:600}
+.snio-nav__hint{
+  margin-top:12px;
+  padding:12px;
+  border:1px dashed var(--snio-border);
+  border-radius:12px;
+  background:#f6f7f7;
+}
+.snio-nav__subhint{min-height:1em}
+
+.snio-pagehead{
+  margin-top:14px;
+  margin-bottom:14px;
+  padding:18px 20px;
+  border:1px solid var(--snio-border);
+  border-radius:14px;
+  background:var(--snio-surface);
+  box-shadow:var(--snio-shadow);
+}
+.snio-pagehead__title{margin:0;font-size:24px;line-height:1.3;color:var(--snio-text)}
+.snio-pagehead__sub{margin:8px 0 0;color:var(--snio-muted);font-size:13px;line-height:1.65}
+
+.snio-grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width: 980px){.snio-grid2{grid-template-columns:1fr}}
+
+.snio-cardx,
+.snio-card,
+.snio-box,
+.snio-hero,
+.snio-inline-status,
+.snio-callout,
+.snio-tablewrap,
+.snio-insights__filters,
+.snio-logbox{
+  background:var(--snio-surface);
+  border:1px solid var(--snio-border);
+  box-shadow:var(--snio-shadow);
+}
+.snio-cardx{
+  position:relative;
+  overflow:hidden;
+  padding:16px;
+  border-radius:12px;
+}
+.snio-cardx--wide{grid-column:1 / -1}
+.snio-cardx::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:3px;
+  background:#c3c4c7;
+}
+.snio-cardx--core::before{background:#2271b1}
+.snio-cardx--delivery::before{background:#3858e9}
+.snio-cardx--bulk::before{background:#d63638}
+.snio-cardx--mini::before{background:#8c8f94}
+.snio-cardx__head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px}
+.snio-cardx__head h2,
+.snio-box__title,
+.snio-card__title{margin:0;font-size:16px;color:var(--snio-text)}
+.snio-cardx__head-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.snio-cardx__actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
+
+.snio-badge,
+.snio-level,
+.snio-pill,
+.snio-checkx{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:2px 8px;
+  border-radius:999px;
+  border:1px solid var(--snio-border);
+  background:#f6f7f7;
+  color:#2c3338;
+  font-size:12px;
+  font-weight:600;
+  line-height:1.6;
+  white-space:nowrap;
+}
+.snio-badge--ok{background:#edfaef;border-color:#b8e6bf;color:#0a4b1f}
+.snio-badge--warn{background:#fcf9e8;border-color:#efd67a;color:#6b4f00}
+.snio-level--info{background:#f0f6fc;border-color:#c5d9ed;color:#135e96}
+.snio-level--warning{background:#fcf9e8;border-color:#efd67a;color:#6b4f00}
+.snio-level--error{background:#fcf0f1;border-color:#f0c0c1;color:#b32d2e}
+
+.snio-muted,
+.snio-box__desc,
+.snio-card__desc,
+.snio-field__hint,
+.snio-progress__meta,
+.snio-score__label,
+.snio-score__val,
+.snio-smartstats__caption,
+.snio-smartstats__metric span,
+.snio-smartstats__footer .snio-muted,
+.snio-smartstats__meta .snio-muted,
+.snio-pill__label,
+.snio-metric__label,
+.snio-cleanup-stats,
+.snio-table thead th,
+.snio-status span{
+  color:var(--snio-muted);
+}
+.snio-muted{margin:0 0 12px;line-height:1.6}
+
+.snio-switchx{display:flex;align-items:center;gap:10px;margin:10px 0;user-select:none}
+.snio-switchx input{position:absolute;opacity:0;pointer-events:none}
+.snio-switchx__ui{
+  position:relative;
+  flex:0 0 auto;
+  width:42px;
+  height:24px;
+  border:1px solid #c3c4c7;
+  border-radius:999px;
+  background:#f0f0f1;
+}
+.snio-switchx__ui::after{
+  content:"";
+  position:absolute;
+  top:2px;
+  left:2px;
+  width:18px;
+  height:18px;
+  border:1px solid #c3c4c7;
+  border-radius:50%;
+  background:#fff;
+  transition:transform .16s ease;
+}
+.snio-switchx input:checked + .snio-switchx__ui{background:#2271b1;border-color:#2271b1}
+.snio-switchx input:checked + .snio-switchx__ui::after{transform:translateX(18px);border-color:#2271b1}
+.snio-switchx__label{font-weight:600;color:var(--snio-text)}
+
+.snio-form{margin:0}
+.snio-field{display:grid;gap:6px;margin:12px 0}
+.snio-field__label{font-weight:600;color:var(--snio-text)}
+.snio-row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.snio-row3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width: 980px){.snio-row2,.snio-row3{grid-template-columns:1fr}}
+
+.snio-inputx,
+.snio-selectx,
+.snio-rangex{
+  width:100%;
+  max-width:100%;
+  padding:9px 11px;
+  border:1px solid #8c8f94;
+  border-radius:8px;
+  background:#fff;
+  color:var(--snio-text);
+}
+.snio-inputx:focus,
+.snio-selectx:focus,
+.snio-rangex:focus{outline:none;box-shadow:0 0 0 1px #2271b1;border-color:#2271b1}
+
+.snio-progress{display:grid;gap:8px}
+.snio-progress__meta{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px}
+.snio-progress__bar,
+.snio-score__bar{
+  height:10px;
+  overflow:hidden;
+  border:1px solid var(--snio-border);
+  border-radius:999px;
+  background:#e2e4e7;
+}
+.snio-progress__bar span,
+.snio-score__bar span{display:block;height:100%;background:#2271b1}
+.snio-score__label{margin-bottom:6px;font-size:12px}
+.snio-score__val{margin-top:6px;font-size:12px}
+
+.snio-inline-status,
+.snio-callout{
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:10px;
+}
+.snio-callout--ok{background:#f0f6fc;border-color:#c5d9ed}
+.snio-callout--bad{background:#fcf0f1;border-color:#f0c0c1}
+.snio-callout--warn{background:#fcf9e8;border-color:#efd67a}
+.snio-callout--muted{background:#f6f7f7;border-color:#dcdcde}
+
+.snio-features{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.snio-features li{display:flex;align-items:flex-start;gap:8px;color:var(--snio-text)}
+.snio-features .dashicons{margin-top:2px;color:#2271b1}
+.snio-features li.is-off .dashicons{color:#8c8f94}
+
+.snio-toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.snio-log-limit-form{display:flex;align-items:center;gap:8px;margin-left:auto}
+.rtl .snio-log-limit-form{margin-left:0;margin-right:auto}
+.snio-tablewrap{border-radius:12px;overflow:hidden}
+.snio-table{width:100%;border-collapse:collapse}
+.snio-table th,
+.snio-table td{padding:12px;border-bottom:1px solid #e0e0e0;vertical-align:top}
+.snio-table thead th{background:#f6f7f7;font-weight:600;text-align:start}
+.snio-table tbody tr:hover td{background:#f6f7f7}
+.snio-table--mini th{width:32%}
+
+.snio-logbox,
+.snio-pre{
+  margin-top:12px;
+  padding:12px;
+  border-radius:12px;
+  background:#1d2327;
+  color:#f6f7f7;
+  border:1px solid #3c434a;
+  overflow:auto;
+  max-width:100%;
+}
+.snio-logbox > div + div{margin-top:8px}
+.snio-logbox .is-error{color:#ffb4b5}
+.snio-log-msg{word-break:break-word}
+
+.snio-toast{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:99999;
+  display:none;
+  padding:10px 12px;
+  border-radius:12px;
+  color:#fff;
+  background:#1d2327;
+  border:1px solid #3c434a;
+  box-shadow:0 6px 24px rgba(0,0,0,.12);
+}
+.rtl .snio-toast{right:auto;left:18px}
+.snio-toast.is-ok{background:#135e96}
+.snio-toast.is-bad{background:#b32d2e}
+
+.snio-pre{white-space:pre-wrap}
+.notice.inline{margin:12px 0 0}
+.snio-admin .notice{margin-top:16px}
+
+@media (max-width: 980px){
+  .snio-topbar{padding:14px 16px}
+  .snio-logoMark{width:38px;height:38px;border-radius:8px}
+  .snio-pagehead{padding:16px}
+  .snio-pagehead__title{font-size:22px}
+  .snio-cardx{border-radius:10px}
+}
+
+
+/* Keep plugin UI stable inside RTL admin screens because the plugin copy is currently English. */
+.rtl .snio-app{direction:ltr;text-align:left}
+.rtl .snio-topbar__actions,.rtl .snio-cardx__actions,.rtl .snio-toolbar,.rtl .snio-progress__meta{direction:ltr}
+.rtl .snio-pagehead__sub,.rtl .snio-muted,.rtl .snio-field__hint,.rtl .snio-inline-status{unicode-bidi:plaintext}
